@@ -59,7 +59,11 @@
     <Compile Include="Bussines\MusteriBussiness.cs" />
     <Compile Include="DAL\DbBaglanti.cs" />
     <Compile Include="DAL\MusteriDAL.cs" />
+    <Compile Include="DAL\OdaDAL.cs" />
+    <Compile Include="DAL\RezervasyonDAL.cs" />
     <Compile Include="EntityLayer\MusteriEntityLayer.cs" />
+    <Compile Include="EntityLayer\OdaEntityLayer.cs" />
+    <Compile Include="EntityLayer\RezervasyonEntityLayer.cs" />
     <Compile Include="GirisCıkısTakip.cs">
       <SubType>UserControl</SubType>
     </Compile>

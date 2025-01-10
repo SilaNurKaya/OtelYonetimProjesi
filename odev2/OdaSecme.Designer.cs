@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.rezervasyonBilgileriGrpBox = new System.Windows.Forms.GroupBox();
+            this.rezervasyonDuzenleBtn = new System.Windows.Forms.Button();
             this.rezervasyonOlusturmaBtn = new System.Windows.Forms.Button();
             this.odaTurleriBakSecGrpBox = new System.Windows.Forms.GroupBox();
             this.bosOdaListeleBtn = new System.Windows.Forms.Button();
@@ -41,19 +42,25 @@
             this.girisTarihiLbl = new System.Windows.Forms.Label();
             this.cıkısTarihiLbl = new System.Windows.Forms.Label();
             this.musteriListelemeGrpBox = new System.Windows.Forms.GroupBox();
-            this.musteriListelemeBtn = new System.Windows.Forms.Button();
             this.musteriListelemeDgv = new System.Windows.Forms.DataGridView();
-            this.rezervasyonDuzenleBtn = new System.Windows.Forms.Button();
+            this.odaFiyatiBelirleGrpBox = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.odaNoSecmeFiyatLbl = new System.Windows.Forms.Label();
+            this.odaFiyatiGirmeTxt = new System.Windows.Forms.TextBox();
+            this.odaFiyatiGirmeLbl = new System.Windows.Forms.Label();
+            this.odaFiyatıOlusturBtn = new System.Windows.Forms.Button();
             this.rezervasyonBilgileriGrpBox.SuspendLayout();
             this.odaTurleriBakSecGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uygunOdalarDgv)).BeginInit();
             this.girisCıkısTarihiGrpBox.SuspendLayout();
             this.musteriListelemeGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.musteriListelemeDgv)).BeginInit();
+            this.odaFiyatiBelirleGrpBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // rezervasyonBilgileriGrpBox
             // 
+            this.rezervasyonBilgileriGrpBox.Controls.Add(this.odaFiyatiBelirleGrpBox);
             this.rezervasyonBilgileriGrpBox.Controls.Add(this.rezervasyonDuzenleBtn);
             this.rezervasyonBilgileriGrpBox.Controls.Add(this.rezervasyonOlusturmaBtn);
             this.rezervasyonBilgileriGrpBox.Controls.Add(this.odaTurleriBakSecGrpBox);
@@ -67,10 +74,20 @@
             this.rezervasyonBilgileriGrpBox.TabStop = false;
             this.rezervasyonBilgileriGrpBox.Text = "Rezervasyon";
             // 
+            // rezervasyonDuzenleBtn
+            // 
+            this.rezervasyonDuzenleBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rezervasyonDuzenleBtn.Location = new System.Drawing.Point(115, 619);
+            this.rezervasyonDuzenleBtn.Name = "rezervasyonDuzenleBtn";
+            this.rezervasyonDuzenleBtn.Size = new System.Drawing.Size(258, 65);
+            this.rezervasyonDuzenleBtn.TabIndex = 19;
+            this.rezervasyonDuzenleBtn.Text = "Rezervasyon Düzenle";
+            this.rezervasyonDuzenleBtn.UseVisualStyleBackColor = true;
+            // 
             // rezervasyonOlusturmaBtn
             // 
             this.rezervasyonOlusturmaBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rezervasyonOlusturmaBtn.Location = new System.Drawing.Point(734, 592);
+            this.rezervasyonOlusturmaBtn.Location = new System.Drawing.Point(727, 619);
             this.rezervasyonOlusturmaBtn.Name = "rezervasyonOlusturmaBtn";
             this.rezervasyonOlusturmaBtn.Size = new System.Drawing.Size(258, 65);
             this.rezervasyonOlusturmaBtn.TabIndex = 18;
@@ -83,7 +100,8 @@
             this.odaTurleriBakSecGrpBox.Controls.Add(this.uygunOdalarDgv);
             this.odaTurleriBakSecGrpBox.Controls.Add(this.odaTuruSecLbl);
             this.odaTurleriBakSecGrpBox.Controls.Add(this.odaTuruSecCmbBox);
-            this.odaTurleriBakSecGrpBox.Location = new System.Drawing.Point(489, 166);
+            this.odaTurleriBakSecGrpBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaTurleriBakSecGrpBox.Location = new System.Drawing.Point(548, 216);
             this.odaTurleriBakSecGrpBox.Name = "odaTurleriBakSecGrpBox";
             this.odaTurleriBakSecGrpBox.Size = new System.Drawing.Size(634, 397);
             this.odaTurleriBakSecGrpBox.TabIndex = 17;
@@ -135,9 +153,10 @@
             this.girisCıkısTarihiGrpBox.Controls.Add(this.girisTarihiDtp);
             this.girisCıkısTarihiGrpBox.Controls.Add(this.girisTarihiLbl);
             this.girisCıkısTarihiGrpBox.Controls.Add(this.cıkısTarihiLbl);
-            this.girisCıkısTarihiGrpBox.Location = new System.Drawing.Point(13, 50);
+            this.girisCıkısTarihiGrpBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.girisCıkısTarihiGrpBox.Location = new System.Drawing.Point(68, 50);
             this.girisCıkısTarihiGrpBox.Name = "girisCıkısTarihiGrpBox";
-            this.girisCıkısTarihiGrpBox.Size = new System.Drawing.Size(1110, 102);
+            this.girisCıkısTarihiGrpBox.Size = new System.Drawing.Size(449, 160);
             this.girisCıkısTarihiGrpBox.TabIndex = 16;
             this.girisCıkısTarihiGrpBox.TabStop = false;
             this.girisCıkısTarihiGrpBox.Text = "Tarih";
@@ -145,7 +164,7 @@
             // cıkısTarihiDtp
             // 
             this.cıkısTarihiDtp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cıkısTarihiDtp.Location = new System.Drawing.Point(772, 41);
+            this.cıkısTarihiDtp.Location = new System.Drawing.Point(143, 81);
             this.cıkısTarihiDtp.Name = "cıkısTarihiDtp";
             this.cıkısTarihiDtp.Size = new System.Drawing.Size(300, 30);
             this.cıkısTarihiDtp.TabIndex = 19;
@@ -173,7 +192,7 @@
             // 
             this.cıkısTarihiLbl.AutoSize = true;
             this.cıkısTarihiLbl.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cıkısTarihiLbl.Location = new System.Drawing.Point(632, 46);
+            this.cıkısTarihiLbl.Location = new System.Drawing.Point(6, 86);
             this.cıkısTarihiLbl.Name = "cıkısTarihiLbl";
             this.cıkısTarihiLbl.Size = new System.Drawing.Size(134, 25);
             this.cıkısTarihiLbl.TabIndex = 15;
@@ -181,25 +200,14 @@
             // 
             // musteriListelemeGrpBox
             // 
-            this.musteriListelemeGrpBox.Controls.Add(this.musteriListelemeBtn);
             this.musteriListelemeGrpBox.Controls.Add(this.musteriListelemeDgv);
             this.musteriListelemeGrpBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.musteriListelemeGrpBox.Location = new System.Drawing.Point(13, 166);
+            this.musteriListelemeGrpBox.Location = new System.Drawing.Point(61, 233);
             this.musteriListelemeGrpBox.Name = "musteriListelemeGrpBox";
-            this.musteriListelemeGrpBox.Size = new System.Drawing.Size(449, 397);
+            this.musteriListelemeGrpBox.Size = new System.Drawing.Size(449, 357);
             this.musteriListelemeGrpBox.TabIndex = 13;
             this.musteriListelemeGrpBox.TabStop = false;
             this.musteriListelemeGrpBox.Text = "Müşteriler";
-            // 
-            // musteriListelemeBtn
-            // 
-            this.musteriListelemeBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.musteriListelemeBtn.Location = new System.Drawing.Point(170, 333);
-            this.musteriListelemeBtn.Name = "musteriListelemeBtn";
-            this.musteriListelemeBtn.Size = new System.Drawing.Size(113, 52);
-            this.musteriListelemeBtn.TabIndex = 9;
-            this.musteriListelemeBtn.Text = "Listele";
-            this.musteriListelemeBtn.UseVisualStyleBackColor = true;
             // 
             // musteriListelemeDgv
             // 
@@ -211,15 +219,68 @@
             this.musteriListelemeDgv.Size = new System.Drawing.Size(436, 288);
             this.musteriListelemeDgv.TabIndex = 0;
             // 
-            // rezervasyonDuzenleBtn
+            // odaFiyatiBelirleGrpBox
             // 
-            this.rezervasyonDuzenleBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rezervasyonDuzenleBtn.Location = new System.Drawing.Point(130, 592);
-            this.rezervasyonDuzenleBtn.Name = "rezervasyonDuzenleBtn";
-            this.rezervasyonDuzenleBtn.Size = new System.Drawing.Size(258, 65);
-            this.rezervasyonDuzenleBtn.TabIndex = 19;
-            this.rezervasyonDuzenleBtn.Text = "Rezervasyon Düzenle";
-            this.rezervasyonDuzenleBtn.UseVisualStyleBackColor = true;
+            this.odaFiyatiBelirleGrpBox.Controls.Add(this.odaFiyatıOlusturBtn);
+            this.odaFiyatiBelirleGrpBox.Controls.Add(this.odaFiyatiGirmeLbl);
+            this.odaFiyatiBelirleGrpBox.Controls.Add(this.odaFiyatiGirmeTxt);
+            this.odaFiyatiBelirleGrpBox.Controls.Add(this.odaNoSecmeFiyatLbl);
+            this.odaFiyatiBelirleGrpBox.Controls.Add(this.comboBox1);
+            this.odaFiyatiBelirleGrpBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaFiyatiBelirleGrpBox.Location = new System.Drawing.Point(548, 50);
+            this.odaFiyatiBelirleGrpBox.Name = "odaFiyatiBelirleGrpBox";
+            this.odaFiyatiBelirleGrpBox.Size = new System.Drawing.Size(634, 160);
+            this.odaFiyatiBelirleGrpBox.TabIndex = 20;
+            this.odaFiyatiBelirleGrpBox.TabStop = false;
+            this.odaFiyatiBelirleGrpBox.Text = "Oda Fiyatı";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(149, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 33);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // odaNoSecmeFiyatLbl
+            // 
+            this.odaNoSecmeFiyatLbl.AutoSize = true;
+            this.odaNoSecmeFiyatLbl.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaNoSecmeFiyatLbl.Location = new System.Drawing.Point(18, 52);
+            this.odaNoSecmeFiyatLbl.Name = "odaNoSecmeFiyatLbl";
+            this.odaNoSecmeFiyatLbl.Size = new System.Drawing.Size(98, 25);
+            this.odaNoSecmeFiyatLbl.TabIndex = 1;
+            this.odaNoSecmeFiyatLbl.Text = "Oda No:";
+            // 
+            // odaFiyatiGirmeTxt
+            // 
+            this.odaFiyatiGirmeTxt.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaFiyatiGirmeTxt.Location = new System.Drawing.Point(149, 93);
+            this.odaFiyatiGirmeTxt.Name = "odaFiyatiGirmeTxt";
+            this.odaFiyatiGirmeTxt.Size = new System.Drawing.Size(195, 34);
+            this.odaFiyatiGirmeTxt.TabIndex = 2;
+            this.odaFiyatiGirmeTxt.TextChanged += new System.EventHandler(this.odaFiyatiGirmeTxt_TextChanged);
+            // 
+            // odaFiyatiGirmeLbl
+            // 
+            this.odaFiyatiGirmeLbl.AutoSize = true;
+            this.odaFiyatiGirmeLbl.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaFiyatiGirmeLbl.Location = new System.Drawing.Point(17, 102);
+            this.odaFiyatiGirmeLbl.Name = "odaFiyatiGirmeLbl";
+            this.odaFiyatiGirmeLbl.Size = new System.Drawing.Size(126, 25);
+            this.odaFiyatiGirmeLbl.TabIndex = 3;
+            this.odaFiyatiGirmeLbl.Text = "Oda Fiyatı:";
+            // 
+            // odaFiyatıOlusturBtn
+            // 
+            this.odaFiyatıOlusturBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaFiyatıOlusturBtn.Location = new System.Drawing.Point(366, 52);
+            this.odaFiyatıOlusturBtn.Name = "odaFiyatıOlusturBtn";
+            this.odaFiyatıOlusturBtn.Size = new System.Drawing.Size(245, 65);
+            this.odaFiyatıOlusturBtn.TabIndex = 4;
+            this.odaFiyatıOlusturBtn.Text = "Fiyat Oluştur";
+            this.odaFiyatıOlusturBtn.UseVisualStyleBackColor = true;
             // 
             // OdaSecme
             // 
@@ -236,6 +297,8 @@
             this.girisCıkısTarihiGrpBox.PerformLayout();
             this.musteriListelemeGrpBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.musteriListelemeDgv)).EndInit();
+            this.odaFiyatiBelirleGrpBox.ResumeLayout(false);
+            this.odaFiyatiBelirleGrpBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -243,7 +306,6 @@
         #endregion
         private System.Windows.Forms.GroupBox rezervasyonBilgileriGrpBox;
         private System.Windows.Forms.GroupBox musteriListelemeGrpBox;
-        private System.Windows.Forms.Button musteriListelemeBtn;
         private System.Windows.Forms.DataGridView musteriListelemeDgv;
         private System.Windows.Forms.Label girisTarihiLbl;
         private System.Windows.Forms.Label cıkısTarihiLbl;
@@ -257,5 +319,11 @@
         private System.Windows.Forms.Button bosOdaListeleBtn;
         private System.Windows.Forms.DataGridView uygunOdalarDgv;
         private System.Windows.Forms.Button rezervasyonDuzenleBtn;
+        private System.Windows.Forms.GroupBox odaFiyatiBelirleGrpBox;
+        private System.Windows.Forms.Button odaFiyatıOlusturBtn;
+        private System.Windows.Forms.Label odaFiyatiGirmeLbl;
+        private System.Windows.Forms.TextBox odaFiyatiGirmeTxt;
+        private System.Windows.Forms.Label odaNoSecmeFiyatLbl;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

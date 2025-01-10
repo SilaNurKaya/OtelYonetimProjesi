@@ -16,5 +16,10 @@ namespace odev2
         {
             InitializeComponent();
         }
+
+        private void odaFiyatiGirmeTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
