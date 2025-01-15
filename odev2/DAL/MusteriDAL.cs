@@ -94,13 +94,13 @@ namespace odev2.DAL
                         OdemeTuru = reader["OdemeTuru"].ToString()
                     };
 
-                    musteriler.Add(musteri); // Listeye ekle
+                    musteriler.Add(musteri);
                 }
 
-                reader.Close(); // Veritabanı bağlantısını kapat
+                reader.Close();
             }
 
-            return musteriler; // Müşterilerin listesi
+            return musteriler; 
         }
     }
 }

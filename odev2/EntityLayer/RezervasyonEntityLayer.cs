@@ -8,7 +8,7 @@ using static odev2.EntityLayer.OdaEntityLayer;
 
 namespace odev2.EntityLayer
 {
-    internal class RezervasyonEntityLayer
+    public class RezervasyonEntityLayer
     {
         public class Rezervasyon
         {
