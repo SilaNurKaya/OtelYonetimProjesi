@@ -50,7 +50,6 @@ namespace odev2.DAL
                 {
                     rezervasyonlar.Add(new Rezervasyon
                     {
-                        RezervasyonId = Convert.ToInt32(reader["rezervasyon_id"]),
                         MusteriId = Convert.ToInt32(reader["musteri_id"]),
                         OdaId = Convert.ToInt32(reader["oda_id"]),
                         GirisTarihi = Convert.ToDateTime(reader["giris_tarihi"]),

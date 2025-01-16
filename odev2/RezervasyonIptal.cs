@@ -21,5 +21,11 @@ namespace odev2
         {
 
         }
+
+        //buraya ıd gözükmesin ve liste kendiliğinden gelsin kodları yazılacak dokümanda var
+        private void RezervasyonIptal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

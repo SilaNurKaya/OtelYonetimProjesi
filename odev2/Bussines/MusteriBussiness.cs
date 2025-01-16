@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using static odev2.EntityLayer.MusteriEntityLayer;
 
 namespace odev2.Bussines
-{/*#merhaba*/
-    internal class MusteriBussiness
+{
+    public class MusteriBussiness
     {
         public MusteriDAL dal = new MusteriDAL();
 
