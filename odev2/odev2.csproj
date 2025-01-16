@@ -57,6 +57,8 @@
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bussines\MusteriBussiness.cs" />
+    <Compile Include="Bussines\OdaBussiness.cs" />
+    <Compile Include="Bussines\RezervasyonBussiness.cs" />
     <Compile Include="DAL\DbBaglanti.cs" />
     <Compile Include="DAL\MusteriDAL.cs" />
     <Compile Include="DAL\OdaDAL.cs" />
@@ -137,9 +139,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\png-clipart-magnifying-glass-computer-icons-symbol-magnifying-glass-glass-cdr.png" />
   </ItemGroup>

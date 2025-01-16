@@ -8,5 +8,6 @@ namespace odev2.Bussines
 {
     public class OdaBussiness
     {
+
     }
 }
