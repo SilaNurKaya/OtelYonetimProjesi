@@ -59,13 +59,16 @@
     <Compile Include="Bussines\MusteriBussiness.cs" />
     <Compile Include="Bussines\OdaBussiness.cs" />
     <Compile Include="Bussines\RezervasyonBussiness.cs" />
+    <Compile Include="Bussines\YoneticiBussiness.cs" />
     <Compile Include="DAL\DbBaglanti.cs" />
     <Compile Include="DAL\MusteriDAL.cs" />
     <Compile Include="DAL\OdaDAL.cs" />
     <Compile Include="DAL\RezervasyonDAL.cs" />
+    <Compile Include="DAL\YoneticiDAL.cs" />
     <Compile Include="EntityLayer\MusteriEntityLayer.cs" />
     <Compile Include="EntityLayer\OdaEntityLayer.cs" />
     <Compile Include="EntityLayer\RezervasyonEntityLayer.cs" />
+    <Compile Include="EntityLayer\YoneticiEntityLayer.cs" />
     <Compile Include="GirisCıkısTakip.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +101,12 @@
     <Compile Include="RezervasyonIptal.Designer.cs">
       <DependentUpon>RezervasyonIptal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Yoneticiler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Yoneticiler.Designer.cs">
+      <DependentUpon>Yoneticiler.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="RezervasyonIptal.resx">
       <DependentUpon>RezervasyonIptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yoneticiler.resx">
+      <DependentUpon>Yoneticiler.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

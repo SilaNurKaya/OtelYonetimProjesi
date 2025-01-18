@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdaSecenekleri));
             this.odaBilgileriGrpBox = new System.Windows.Forms.GroupBox();
             this.odaSilmeGrpBox = new System.Windows.Forms.GroupBox();
+            this.odaIptalNedeniTxt = new System.Windows.Forms.TextBox();
+            this.odaIptalNedeniLbl = new System.Windows.Forms.Label();
             this.odaSilmeBtn = new System.Windows.Forms.Button();
             this.odaSilmeOdaNoTxt = new System.Windows.Forms.TextBox();
             this.odaSilmeOdaNoLbl = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.odaDurumuLbl = new System.Windows.Forms.Label();
             this.odaTipiLbl = new System.Windows.Forms.Label();
             this.odaNosuLbl = new System.Windows.Forms.Label();
-            this.odaIptalNedeniLbl = new System.Windows.Forms.Label();
-            this.odaIptalNedeniTxt = new System.Windows.Forms.TextBox();
             this.odaBilgileriGrpBox.SuspendLayout();
             this.odaSilmeGrpBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -85,6 +85,26 @@
             this.odaSilmeGrpBox.TabIndex = 2;
             this.odaSilmeGrpBox.TabStop = false;
             this.odaSilmeGrpBox.Text = "Oda Sil";
+            // 
+            // odaIptalNedeniTxt
+            // 
+            this.odaIptalNedeniTxt.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaIptalNedeniTxt.HideSelection = false;
+            this.odaIptalNedeniTxt.Location = new System.Drawing.Point(25, 139);
+            this.odaIptalNedeniTxt.Multiline = true;
+            this.odaIptalNedeniTxt.Name = "odaIptalNedeniTxt";
+            this.odaIptalNedeniTxt.Size = new System.Drawing.Size(303, 142);
+            this.odaIptalNedeniTxt.TabIndex = 10;
+            // 
+            // odaIptalNedeniLbl
+            // 
+            this.odaIptalNedeniLbl.AutoSize = true;
+            this.odaIptalNedeniLbl.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaIptalNedeniLbl.Location = new System.Drawing.Point(20, 111);
+            this.odaIptalNedeniLbl.Name = "odaIptalNedeniLbl";
+            this.odaIptalNedeniLbl.Size = new System.Drawing.Size(192, 25);
+            this.odaIptalNedeniLbl.TabIndex = 9;
+            this.odaIptalNedeniLbl.Text = "Oda İptal Nedeni:";
             // 
             // odaSilmeBtn
             // 
@@ -262,26 +282,6 @@
             this.odaNosuLbl.TabIndex = 0;
             this.odaNosuLbl.Text = "Oda No:";
             // 
-            // odaIptalNedeniLbl
-            // 
-            this.odaIptalNedeniLbl.AutoSize = true;
-            this.odaIptalNedeniLbl.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.odaIptalNedeniLbl.Location = new System.Drawing.Point(20, 111);
-            this.odaIptalNedeniLbl.Name = "odaIptalNedeniLbl";
-            this.odaIptalNedeniLbl.Size = new System.Drawing.Size(192, 25);
-            this.odaIptalNedeniLbl.TabIndex = 9;
-            this.odaIptalNedeniLbl.Text = "Oda İptal Nedeni:";
-            // 
-            // odaIptalNedeniTxt
-            // 
-            this.odaIptalNedeniTxt.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.odaIptalNedeniTxt.HideSelection = false;
-            this.odaIptalNedeniTxt.Location = new System.Drawing.Point(25, 139);
-            this.odaIptalNedeniTxt.Multiline = true;
-            this.odaIptalNedeniTxt.Name = "odaIptalNedeniTxt";
-            this.odaIptalNedeniTxt.Size = new System.Drawing.Size(303, 142);
-            this.odaIptalNedeniTxt.TabIndex = 10;
-            // 
             // OdaSecenekleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,6 +289,7 @@
             this.Controls.Add(this.odaBilgileriGrpBox);
             this.Name = "OdaSecenekleri";
             this.Size = new System.Drawing.Size(1250, 700);
+            this.Load += new System.EventHandler(this.OdaSecenekleri_Load);
             this.odaBilgileriGrpBox.ResumeLayout(false);
             this.odaSilmeGrpBox.ResumeLayout(false);
             this.odaSilmeGrpBox.PerformLayout();

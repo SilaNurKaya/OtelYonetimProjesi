@@ -16,7 +16,7 @@ namespace odev2.DAL
 
             using (MySqlConnection connection = DbBaglanti.BaglantiGetir())
             {
-                string query = "INSERT INTO musteri (musteri_adi_soyadi, musteri_telNo, musteri_tcNo, musteri_odemeTuru) VALUES (@AdiSoyadi, @TelNo, @TcNo, @OdemeTuru)";
+                string query = "INSERT INTO Rezervasyonlar (musteri_id, oda_id, giris_tarihi, cıkıs_tarihi) VALUES (@MusteriId, @OdaId, @GirisTarihi, @CıkısTarihi)";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@MusteriId", musteriId);
                 command.Parameters.AddWithValue("@OdaId", odaId);
@@ -80,16 +80,21 @@ namespace odev2.DAL
             }
         }
         //iptal nedeni eklemeyi unutma
-        public bool RezervasyonSil(int rezervasyonId)
+        public void RezervasyonSil(string TcNo)
         {
             using (var connection = DbBaglanti.BaglantiGetir())
             {
-                string query = "DELETE FROM Rezervasyonlar WHERE rezervasyon_id = @RezervasyonId";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@RezervasyonId", rezervasyonId);
-                connection.Open();
+                string query = @"
+            DELETE r 
+            FROM Rezervasyonlar r
+            INNER JOIN musteri m ON r.musteri_id = m.id
+            WHERE m.musteri_tcNo = @TcNo";
 
-                return command.ExecuteNonQuery() > 0;
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@TcNo", TcNo);
+
+                connection.Open();
+                command.ExecuteNonQuery();
             }
         }
     }

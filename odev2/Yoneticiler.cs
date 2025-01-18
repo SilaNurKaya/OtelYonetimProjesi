@@ -10,19 +10,15 @@ using System.Windows.Forms;
 
 namespace odev2
 {
-    public partial class OdaSecenekleri : UserControl
+    public partial class Yoneticiler : UserControl
     {
-        public OdaSecenekleri()
+        public Yoneticiler()
         {
             InitializeComponent();
         }
 
-        private void odaDurumuCmbBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void OdaSecenekleri_Load(object sender, EventArgs e)
+        private void Yonetici_Load(object sender, EventArgs e)
         {
 
         }

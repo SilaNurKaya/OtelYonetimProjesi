@@ -46,7 +46,7 @@ namespace odev2.DAL
         {
             using (MySqlConnection connection = DbBaglanti.BaglantiGetir())
             {
-                string query = "UPDATE Musteriler SET AdSoyad = @AdSoyad, TelefonNo = @TelefonNo, OdemeTuru = @OdemeTuru WHERE TcNo = @TcNo";
+                string query = "UPDATE musteri SET AdSoyad = @AdSoyad, TelefonNo = @TelefonNo, OdemeTuru = @OdemeTuru WHERE TcNo = @TcNo";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@AdSoyad", yeniAdSoyad);
                 command.Parameters.AddWithValue("@TelefonNo", yeniTelNo);
@@ -62,7 +62,7 @@ namespace odev2.DAL
         {
             using (MySqlConnection connection = DbBaglanti.BaglantiGetir())
             {
-                string query = "DELETE FROM Musteriler WHERE TcNo = @TcNo";
+                string query = "DELETE FROM musteri WHERE TcNo = @TcNo";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@TcNo", tcNo);
 
@@ -77,7 +77,7 @@ namespace odev2.DAL
 
             using (MySqlConnection connection = DbBaglanti.BaglantiGetir()) // Bağlantıyı aç
             {
-                string query = "SELECT Id, AdSoyad, TelNo, TcNo, OdemeTuru FROM Musteriler"; // Veritabanındaki müşteri verilerini al
+                string query = "SELECT Id, AdSoyad, TelNo, TcNo, OdemeTuru FROM musteri"; // Veritabanındaki müşteri verilerini al
                 MySqlCommand command = new MySqlCommand(query, connection); // MySqlCommand kullanıldı
 
                 connection.Open();
