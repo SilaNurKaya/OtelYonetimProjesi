@@ -31,13 +31,13 @@
             this.musteriBilgileriAlmaGrpBox = new System.Windows.Forms.GroupBox();
             this.musteriSilmeGrpBox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.musteriSilmeUyarıLbl = new System.Windows.Forms.Label();
             this.musteriSilmeBtn = new System.Windows.Forms.Button();
             this.musteriTcNosuSilmeTxt = new System.Windows.Forms.TextBox();
             this.musteriTcNosuSilmeLbl = new System.Windows.Forms.Label();
             this.musteriDuzenlemeGrpBox = new System.Windows.Forms.GroupBox();
             this.musteriDuzenlemeBtn = new System.Windows.Forms.Button();
-            this.musteriOdemeTuruDuzenlemeTxt = new System.Windows.Forms.TextBox();
-            this.musteriAdiSoyadiTxt = new System.Windows.Forms.TextBox();
+            this.musteriAdiSoyadiDuzenlemeTxt = new System.Windows.Forms.TextBox();
             this.musteriTcNosuDuzenlemeTxt = new System.Windows.Forms.TextBox();
             this.musteriTelNosuDuzenlemeTxt = new System.Windows.Forms.TextBox();
             this.musteriOdemeTuruDuzenlemeLbl = new System.Windows.Forms.Label();
@@ -47,14 +47,14 @@
             this.musteriEklemeGrpBox = new System.Windows.Forms.GroupBox();
             this.musteriAdıSoyadıLbl = new System.Windows.Forms.Label();
             this.musteriEkleBtn = new System.Windows.Forms.Button();
-            this.musteriOdemeTuruTxt = new System.Windows.Forms.TextBox();
-            this.musteriAdiSoyadiDuzenlemeTxt = new System.Windows.Forms.TextBox();
+            this.musteriAdiSoyadiTxt = new System.Windows.Forms.TextBox();
             this.musteriTelNosuLbl = new System.Windows.Forms.Label();
             this.musteriOdemeTuruLbl = new System.Windows.Forms.Label();
             this.musteriTcNosuTxt = new System.Windows.Forms.TextBox();
             this.musteriTelNosuTxt = new System.Windows.Forms.TextBox();
             this.musteriTcNosuLbl = new System.Windows.Forms.Label();
-            this.musteriSilmeUyarıLbl = new System.Windows.Forms.Label();
+            this.musteriOdemeTuruCmbBox = new System.Windows.Forms.ComboBox();
+            this.musteriOdemeTuruDuzenlemeCmbBox = new System.Windows.Forms.ComboBox();
             this.musteriBilgileriAlmaGrpBox.SuspendLayout();
             this.musteriSilmeGrpBox.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -100,6 +100,19 @@
             this.panel1.Size = new System.Drawing.Size(334, 151);
             this.panel1.TabIndex = 3;
             // 
+            // musteriSilmeUyarıLbl
+            // 
+            this.musteriSilmeUyarıLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.musteriSilmeUyarıLbl.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musteriSilmeUyarıLbl.Location = new System.Drawing.Point(25, 17);
+            this.musteriSilmeUyarıLbl.Name = "musteriSilmeUyarıLbl";
+            this.musteriSilmeUyarıLbl.Size = new System.Drawing.Size(283, 119);
+            this.musteriSilmeUyarıLbl.TabIndex = 0;
+            this.musteriSilmeUyarıLbl.Text = " Uyarı: Silinen müşteriler geri alınamaz!";
+            this.musteriSilmeUyarıLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.musteriSilmeUyarıLbl.UseCompatibleTextRendering = true;
+            this.musteriSilmeUyarıLbl.Click += new System.EventHandler(this.musteriSilmeUyarıLbl_Click);
+            // 
             // musteriSilmeBtn
             // 
             this.musteriSilmeBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -112,9 +125,10 @@
             // 
             // musteriTcNosuSilmeTxt
             // 
+            this.musteriTcNosuSilmeTxt.Font = new System.Drawing.Font("Times New Roman", 16.8F, System.Drawing.FontStyle.Bold);
             this.musteriTcNosuSilmeTxt.Location = new System.Drawing.Point(23, 98);
             this.musteriTcNosuSilmeTxt.Name = "musteriTcNosuSilmeTxt";
-            this.musteriTcNosuSilmeTxt.Size = new System.Drawing.Size(334, 39);
+            this.musteriTcNosuSilmeTxt.Size = new System.Drawing.Size(334, 40);
             this.musteriTcNosuSilmeTxt.TabIndex = 1;
             // 
             // musteriTcNosuSilmeLbl
@@ -129,8 +143,8 @@
             // 
             // musteriDuzenlemeGrpBox
             // 
+            this.musteriDuzenlemeGrpBox.Controls.Add(this.musteriOdemeTuruDuzenlemeCmbBox);
             this.musteriDuzenlemeGrpBox.Controls.Add(this.musteriDuzenlemeBtn);
-            this.musteriDuzenlemeGrpBox.Controls.Add(this.musteriOdemeTuruDuzenlemeTxt);
             this.musteriDuzenlemeGrpBox.Controls.Add(this.musteriAdiSoyadiDuzenlemeTxt);
             this.musteriDuzenlemeGrpBox.Controls.Add(this.musteriTcNosuDuzenlemeTxt);
             this.musteriDuzenlemeGrpBox.Controls.Add(this.musteriTelNosuDuzenlemeTxt);
@@ -156,19 +170,12 @@
             this.musteriDuzenlemeBtn.Text = "Müşteri Düzenle";
             this.musteriDuzenlemeBtn.UseVisualStyleBackColor = true;
             // 
-            // musteriOdemeTuruDuzenlemeTxt
+            // musteriAdiSoyadiDuzenlemeTxt
             // 
-            this.musteriOdemeTuruDuzenlemeTxt.Location = new System.Drawing.Point(16, 413);
-            this.musteriOdemeTuruDuzenlemeTxt.Name = "musteriOdemeTuruDuzenlemeTxt";
-            this.musteriOdemeTuruDuzenlemeTxt.Size = new System.Drawing.Size(345, 40);
-            this.musteriOdemeTuruDuzenlemeTxt.TabIndex = 7;
-            // 
-            // musteriAdiSoyadiTxt
-            // 
-            this.musteriAdiSoyadiTxt.Location = new System.Drawing.Point(11, 98);
-            this.musteriAdiSoyadiTxt.Name = "musteriAdiSoyadiTxt";
-            this.musteriAdiSoyadiTxt.Size = new System.Drawing.Size(345, 40);
-            this.musteriAdiSoyadiTxt.TabIndex = 0;
+            this.musteriAdiSoyadiDuzenlemeTxt.Location = new System.Drawing.Point(11, 97);
+            this.musteriAdiSoyadiDuzenlemeTxt.Name = "musteriAdiSoyadiDuzenlemeTxt";
+            this.musteriAdiSoyadiDuzenlemeTxt.Size = new System.Drawing.Size(347, 40);
+            this.musteriAdiSoyadiDuzenlemeTxt.TabIndex = 4;
             // 
             // musteriTcNosuDuzenlemeTxt
             // 
@@ -226,10 +233,10 @@
             // 
             // musteriEklemeGrpBox
             // 
+            this.musteriEklemeGrpBox.Controls.Add(this.musteriOdemeTuruCmbBox);
             this.musteriEklemeGrpBox.Controls.Add(this.musteriAdıSoyadıLbl);
             this.musteriEklemeGrpBox.Controls.Add(this.musteriEkleBtn);
             this.musteriEklemeGrpBox.Controls.Add(this.musteriAdiSoyadiTxt);
-            this.musteriEklemeGrpBox.Controls.Add(this.musteriOdemeTuruTxt);
             this.musteriEklemeGrpBox.Controls.Add(this.musteriTelNosuLbl);
             this.musteriEklemeGrpBox.Controls.Add(this.musteriOdemeTuruLbl);
             this.musteriEklemeGrpBox.Controls.Add(this.musteriTcNosuTxt);
@@ -264,19 +271,12 @@
             this.musteriEkleBtn.UseVisualStyleBackColor = true;
             this.musteriEkleBtn.Click += new System.EventHandler(this.musteriEkleBtn_Click);
             // 
-            // musteriOdemeTuruTxt
+            // musteriAdiSoyadiTxt
             // 
-            this.musteriOdemeTuruTxt.Location = new System.Drawing.Point(11, 413);
-            this.musteriOdemeTuruTxt.Name = "musteriOdemeTuruTxt";
-            this.musteriOdemeTuruTxt.Size = new System.Drawing.Size(347, 40);
-            this.musteriOdemeTuruTxt.TabIndex = 7;
-            // 
-            // musteriAdiSoyadiDuzenlemeTxt
-            // 
-            this.musteriAdiSoyadiDuzenlemeTxt.Location = new System.Drawing.Point(11, 97);
-            this.musteriAdiSoyadiDuzenlemeTxt.Name = "musteriAdiSoyadiDuzenlemeTxt";
-            this.musteriAdiSoyadiDuzenlemeTxt.Size = new System.Drawing.Size(347, 40);
-            this.musteriAdiSoyadiDuzenlemeTxt.TabIndex = 4;
+            this.musteriAdiSoyadiTxt.Location = new System.Drawing.Point(11, 98);
+            this.musteriAdiSoyadiTxt.Name = "musteriAdiSoyadiTxt";
+            this.musteriAdiSoyadiTxt.Size = new System.Drawing.Size(345, 40);
+            this.musteriAdiSoyadiTxt.TabIndex = 0;
             // 
             // musteriTelNosuLbl
             // 
@@ -322,18 +322,21 @@
             this.musteriTcNosuLbl.TabIndex = 2;
             this.musteriTcNosuLbl.Text = "TC No:";
             // 
-            // musteriSilmeUyarıLbl
+            // musteriOdemeTuruCmbBox
             // 
-            this.musteriSilmeUyarıLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.musteriSilmeUyarıLbl.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musteriSilmeUyarıLbl.Location = new System.Drawing.Point(25, 17);
-            this.musteriSilmeUyarıLbl.Name = "musteriSilmeUyarıLbl";
-            this.musteriSilmeUyarıLbl.Size = new System.Drawing.Size(283, 119);
-            this.musteriSilmeUyarıLbl.TabIndex = 0;
-            this.musteriSilmeUyarıLbl.Text = " Uyarı: Silinen müşteriler geri alınamaz!";
-            this.musteriSilmeUyarıLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.musteriSilmeUyarıLbl.UseCompatibleTextRendering = true;
-            this.musteriSilmeUyarıLbl.Click += new System.EventHandler(this.musteriSilmeUyarıLbl_Click);
+            this.musteriOdemeTuruCmbBox.FormattingEnabled = true;
+            this.musteriOdemeTuruCmbBox.Location = new System.Drawing.Point(11, 414);
+            this.musteriOdemeTuruCmbBox.Name = "musteriOdemeTuruCmbBox";
+            this.musteriOdemeTuruCmbBox.Size = new System.Drawing.Size(345, 40);
+            this.musteriOdemeTuruCmbBox.TabIndex = 9;
+            // 
+            // musteriOdemeTuruDuzenlemeCmbBox
+            // 
+            this.musteriOdemeTuruDuzenlemeCmbBox.FormattingEnabled = true;
+            this.musteriOdemeTuruDuzenlemeCmbBox.Location = new System.Drawing.Point(16, 414);
+            this.musteriOdemeTuruDuzenlemeCmbBox.Name = "musteriOdemeTuruDuzenlemeCmbBox";
+            this.musteriOdemeTuruDuzenlemeCmbBox.Size = new System.Drawing.Size(345, 40);
+            this.musteriOdemeTuruDuzenlemeCmbBox.TabIndex = 10;
             // 
             // MusteriBilgileri
             // 
@@ -363,13 +366,11 @@
         private System.Windows.Forms.Label musteriTcNosuLbl;
         private System.Windows.Forms.Label musteriAdıSoyadıLbl;
         private System.Windows.Forms.TextBox musteriAdiSoyadiTxt;
-        private System.Windows.Forms.TextBox musteriOdemeTuruTxt;
         private System.Windows.Forms.TextBox musteriTelNosuTxt;
         private System.Windows.Forms.TextBox musteriTcNosuTxt;
         private System.Windows.Forms.Button musteriEkleBtn;
         private System.Windows.Forms.GroupBox musteriEklemeGrpBox;
         private System.Windows.Forms.GroupBox musteriDuzenlemeGrpBox;
-        private System.Windows.Forms.TextBox musteriOdemeTuruDuzenlemeTxt;
         private System.Windows.Forms.TextBox musteriTcNosuDuzenlemeTxt;
         private System.Windows.Forms.TextBox musteriTelNosuDuzenlemeTxt;
         private System.Windows.Forms.TextBox musteriAdiSoyadiDuzenlemeTxt;
@@ -384,5 +385,7 @@
         private System.Windows.Forms.Button musteriSilmeBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label musteriSilmeUyarıLbl;
+        private System.Windows.Forms.ComboBox musteriOdemeTuruDuzenlemeCmbBox;
+        private System.Windows.Forms.ComboBox musteriOdemeTuruCmbBox;
     }
 }

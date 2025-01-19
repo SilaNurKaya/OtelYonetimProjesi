@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using odev2.Bussines;
 using odev2.DAL;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static odev2.EntityLayer.MusteriEntityLayer;
 
 namespace odev2
 {
@@ -26,7 +28,9 @@ namespace odev2
 
         private void MusteriBilgileri_Load(object sender, EventArgs e)
         {
-
+            musteriOdemeTuruCmbBox.Items.Add("Nakit");
+            musteriOdemeTuruCmbBox.Items.Add("Kart");
+            musteriOdemeTuruCmbBox.Items.Add("Havale");
         }
 
         private void musteriSilmeUyarıLbl_Click(object sender, EventArgs e)
@@ -38,37 +42,25 @@ namespace odev2
         {
             try
             {
-                // DbBaglanti sınıfından mevcut bağlantıyı çağırıyoruz
-                MySqlConnection baglanti = DbBaglanti.BaglantiGetir();
+                // Formdaki verileri alıyoruz
+                Musteri musteri = new Musteri
+                {
+                    AdSoyad = musteriAdiSoyadiTxt.Text,
+                    TelNo = musteriTelNosuTxt.Text,
+                    TcNo = musteriTcNosuTxt.Text,
+                    OdemeTuru = musteriOdemeTuruCmbBox.Text
+                };
 
-                // SQL komutunu tanımlıyoruz: Müşteri bilgilerini eklemek için
-                string query = "INSERT INTO musteri (musteri_adi_soyadi, musteri_telNo, musteri_tcNo, musteri_odemeTuru) " +
-                               "VALUES (@AdiSoyadi, @TelNo, @TcNo, @OdemeTuru)";
+                // Business katmanına gönderiyoruz
+                MusteriBussiness business = new MusteriBussiness();
+                business.MusteriEkle(musteri);
 
-                MySqlCommand komut = new MySqlCommand(query, baglanti);
-
-                // Parametreleri ekliyoruz
-                komut.Parameters.AddWithValue("@AdiSoyadi", musteriAdiSoyadiTxt.Text);
-                komut.Parameters.AddWithValue("@TelNo", musteriTelNosuTxt.Text);
-                komut.Parameters.AddWithValue("@TcNo", musteriTcNosuTxt.Text);
-                komut.Parameters.AddWithValue("@OdemeTuru", musteriOdemeTuruTxt.Text);
-
-                // Bağlantıyı açıyoruz
-                baglanti.Open();
-
-                // Komutu çalıştırarak müşteri ekliyoruz
-                komut.ExecuteNonQuery();
-
-                // Başarı mesajını gösteriyoruz
                 MessageBox.Show("Müşteri başarıyla eklendi.");
-
-                // Bağlantıyı kapatıyoruz
-                baglanti.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                // Hata durumunda uyarı mesajı gösteriyoruz
-                MessageBox.Show("Müşteri ekleneirken bir sorun oluştu.");
+                // Hata durumunda mesaj gösteriyoruz
+                MessageBox.Show("Müşteri eklenirken hata oluştu." + ex.Message);
             }
         }
     }

@@ -56,10 +56,16 @@
     <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bussines\MusteriBussiness.cs" />
-    <Compile Include="Bussines\OdaBussiness.cs" />
-    <Compile Include="Bussines\RezervasyonBussiness.cs" />
-    <Compile Include="Bussines\YoneticiBussiness.cs" />
+    <Compile Include="AnaSayfa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\MusteriBussiness.cs" />
+    <Compile Include="Bussiness\OdaBussiness.cs" />
+    <Compile Include="Bussiness\RezervasyonBussiness.cs" />
+    <Compile Include="Bussiness\YoneticiBussiness.cs" />
     <Compile Include="DAL\DbBaglanti.cs" />
     <Compile Include="DAL\MusteriDAL.cs" />
     <Compile Include="DAL\OdaDAL.cs" />
@@ -101,6 +107,18 @@
     <Compile Include="RezervasyonIptal.Designer.cs">
       <DependentUpon>RezervasyonIptal.cs</DependentUpon>
     </Compile>
+    <Compile Include="SifreUnuttum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SifreUnuttum.Designer.cs">
+      <DependentUpon>SifreUnuttum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifreUnuttumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifreUnuttumForm.Designer.cs">
+      <DependentUpon>SifreUnuttumForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Yoneticiler.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GirisCıkısTakip.resx">
       <DependentUpon>GirisCıkısTakip.cs</DependentUpon>
@@ -134,6 +155,12 @@
     </Compile>
     <EmbeddedResource Include="RezervasyonIptal.resx">
       <DependentUpon>RezervasyonIptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifreUnuttum.resx">
+      <DependentUpon>SifreUnuttum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifreUnuttumForm.resx">
+      <DependentUpon>SifreUnuttumForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Yoneticiler.resx">
       <DependentUpon>Yoneticiler.cs</DependentUpon>

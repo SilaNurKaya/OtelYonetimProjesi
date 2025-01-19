@@ -115,13 +115,13 @@ namespace odev2.DAL
 
         // 5. Oda sil
         //Oda iptal nedenini buraya eklemeyi unutma
-        public bool OdaSil(int odaId)
+        public bool OdaSil(int odaNo)
         {
             using (var connection = DbBaglanti.BaglantiGetir())
             {
-                string query = "DELETE FROM Odalar SET oda_iptal_nedeni = @OdaIptalNedeni WHERE oda_id = @OdaId";
+                string query = "DELETE FROM Odalar WHERE oda_no = @OdaNo";
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@OdaId", odaId);
+                command.Parameters.AddWithValue("@OdaNo", odaNo);
                 connection.Open();
 
                 return command.ExecuteNonQuery() > 0;
