@@ -28,35 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Panel panelIcerik;
             this.solPanel = new System.Windows.Forms.Panel();
+            this.anaSayfaBtn = new System.Windows.Forms.Button();
+            this.odaSecmeGetirBtn = new System.Windows.Forms.Button();
+            this.kayanPanel = new System.Windows.Forms.Panel();
             this.girisCıkısBilgileriGetirBtn = new System.Windows.Forms.Button();
             this.rezervasyonIptalGetirBtn = new System.Windows.Forms.Button();
             this.odaSecenekleriGetirBtn = new System.Windows.Forms.Button();
             this.musteriBilgileriGetirbtn = new System.Windows.Forms.Button();
             this.adminGirisGetirBtn = new System.Windows.Forms.Button();
-            this.kayanPanel = new System.Windows.Forms.Panel();
-            this.odaSecmeGetirBtn = new System.Windows.Forms.Button();
-            this.anaSayfaBtn = new System.Windows.Forms.Button();
-            this.anaSayfaCagır = new odev2.AnaSayfa();
-            this.musteriBilgileriCagır = new odev2.MusteriBilgileri();
-            this.yoneticilerCagır = new odev2.Yoneticiler();
-            panelIcerik = new System.Windows.Forms.Panel();
-            panelIcerik.SuspendLayout();
+            this.içerikPanel = new System.Windows.Forms.Panel();
             this.solPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelIcerik
-            // 
-            panelIcerik.Controls.Add(this.anaSayfaCagır);
-            panelIcerik.Controls.Add(this.musteriBilgileriCagır);
-            panelIcerik.Controls.Add(this.yoneticilerCagır);
-            panelIcerik.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelIcerik.Location = new System.Drawing.Point(200, 0);
-            panelIcerik.Name = "panelIcerik";
-            panelIcerik.Size = new System.Drawing.Size(1212, 703);
-            panelIcerik.TabIndex = 2;
-            panelIcerik.Paint += new System.Windows.Forms.PaintEventHandler(this.panelIcerik_Paint);
             // 
             // solPanel
             // 
@@ -75,6 +58,40 @@
             this.solPanel.Size = new System.Drawing.Size(200, 703);
             this.solPanel.TabIndex = 1;
             // 
+            // anaSayfaBtn
+            // 
+            this.anaSayfaBtn.FlatAppearance.BorderSize = 0;
+            this.anaSayfaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anaSayfaBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.anaSayfaBtn.Location = new System.Drawing.Point(24, 12);
+            this.anaSayfaBtn.Name = "anaSayfaBtn";
+            this.anaSayfaBtn.Size = new System.Drawing.Size(170, 70);
+            this.anaSayfaBtn.TabIndex = 8;
+            this.anaSayfaBtn.Text = "Ana Sayfa";
+            this.anaSayfaBtn.UseVisualStyleBackColor = true;
+            this.anaSayfaBtn.Click += new System.EventHandler(this.anaSayfaBtn_Click);
+            // 
+            // odaSecmeGetirBtn
+            // 
+            this.odaSecmeGetirBtn.FlatAppearance.BorderSize = 0;
+            this.odaSecmeGetirBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.odaSecmeGetirBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.odaSecmeGetirBtn.Location = new System.Drawing.Point(24, 282);
+            this.odaSecmeGetirBtn.Name = "odaSecmeGetirBtn";
+            this.odaSecmeGetirBtn.Size = new System.Drawing.Size(170, 70);
+            this.odaSecmeGetirBtn.TabIndex = 7;
+            this.odaSecmeGetirBtn.Text = "Rezervasyon Oluştur";
+            this.odaSecmeGetirBtn.UseVisualStyleBackColor = true;
+            this.odaSecmeGetirBtn.Click += new System.EventHandler(this.odaSecmeGetirBtn_Click);
+            // 
+            // kayanPanel
+            // 
+            this.kayanPanel.BackColor = System.Drawing.Color.Black;
+            this.kayanPanel.Location = new System.Drawing.Point(3, 12);
+            this.kayanPanel.Name = "kayanPanel";
+            this.kayanPanel.Size = new System.Drawing.Size(15, 70);
+            this.kayanPanel.TabIndex = 0;
+            // 
             // girisCıkısBilgileriGetirBtn
             // 
             this.girisCıkısBilgileriGetirBtn.FlatAppearance.BorderSize = 0;
@@ -86,6 +103,7 @@
             this.girisCıkısBilgileriGetirBtn.TabIndex = 6;
             this.girisCıkısBilgileriGetirBtn.Text = "Giriş - Çıkış Bilgileri";
             this.girisCıkısBilgileriGetirBtn.UseVisualStyleBackColor = true;
+            this.girisCıkısBilgileriGetirBtn.Click += new System.EventHandler(this.girisCıkısBilgileriGetirBtn_Click);
             // 
             // rezervasyonIptalGetirBtn
             // 
@@ -98,6 +116,7 @@
             this.rezervasyonIptalGetirBtn.TabIndex = 5;
             this.rezervasyonIptalGetirBtn.Text = "Rezervasyon İptal";
             this.rezervasyonIptalGetirBtn.UseVisualStyleBackColor = true;
+            this.rezervasyonIptalGetirBtn.Click += new System.EventHandler(this.rezervasyonIptalGetirBtn_Click);
             // 
             // odaSecenekleriGetirBtn
             // 
@@ -110,6 +129,7 @@
             this.odaSecenekleriGetirBtn.TabIndex = 4;
             this.odaSecenekleriGetirBtn.Text = "Oda Seçenekleri";
             this.odaSecenekleriGetirBtn.UseVisualStyleBackColor = true;
+            this.odaSecenekleriGetirBtn.Click += new System.EventHandler(this.odaSecenekleriGetirBtn_Click);
             // 
             // musteriBilgileriGetirbtn
             // 
@@ -137,74 +157,26 @@
             this.adminGirisGetirBtn.UseVisualStyleBackColor = true;
             this.adminGirisGetirBtn.Click += new System.EventHandler(this.adminGirisGetirBtn_Click);
             // 
-            // kayanPanel
+            // içerikPanel
             // 
-            this.kayanPanel.BackColor = System.Drawing.Color.Black;
-            this.kayanPanel.Location = new System.Drawing.Point(3, 12);
-            this.kayanPanel.Name = "kayanPanel";
-            this.kayanPanel.Size = new System.Drawing.Size(15, 70);
-            this.kayanPanel.TabIndex = 0;
-            // 
-            // odaSecmeGetirBtn
-            // 
-            this.odaSecmeGetirBtn.FlatAppearance.BorderSize = 0;
-            this.odaSecmeGetirBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.odaSecmeGetirBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.odaSecmeGetirBtn.Location = new System.Drawing.Point(24, 282);
-            this.odaSecmeGetirBtn.Name = "odaSecmeGetirBtn";
-            this.odaSecmeGetirBtn.Size = new System.Drawing.Size(170, 70);
-            this.odaSecmeGetirBtn.TabIndex = 7;
-            this.odaSecmeGetirBtn.Text = "Rezervasyon Oluştur";
-            this.odaSecmeGetirBtn.UseVisualStyleBackColor = true;
-            this.odaSecmeGetirBtn.Click += new System.EventHandler(this.odaSecmeGetirBtn_Click);
-            // 
-            // anaSayfaBtn
-            // 
-            this.anaSayfaBtn.FlatAppearance.BorderSize = 0;
-            this.anaSayfaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anaSayfaBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.anaSayfaBtn.Location = new System.Drawing.Point(24, 12);
-            this.anaSayfaBtn.Name = "anaSayfaBtn";
-            this.anaSayfaBtn.Size = new System.Drawing.Size(170, 70);
-            this.anaSayfaBtn.TabIndex = 8;
-            this.anaSayfaBtn.Text = "Ana Sayfa";
-            this.anaSayfaBtn.UseVisualStyleBackColor = true;
-            this.anaSayfaBtn.Click += new System.EventHandler(this.anaSayfaBtn_Click);
-            // 
-            // anaSayfaCagır
-            // 
-            this.anaSayfaCagır.Location = new System.Drawing.Point(0, 0);
-            this.anaSayfaCagır.Name = "anaSayfaCagır";
-            this.anaSayfaCagır.Size = new System.Drawing.Size(1200, 700);
-            this.anaSayfaCagır.TabIndex = 2;
-            // 
-            // musteriBilgileriCagır
-            // 
-            this.musteriBilgileriCagır.Location = new System.Drawing.Point(0, 0);
-            this.musteriBilgileriCagır.Name = "musteriBilgileriCagır";
-            this.musteriBilgileriCagır.Size = new System.Drawing.Size(1200, 700);
-            this.musteriBilgileriCagır.TabIndex = 1;
-            // 
-            // yoneticilerCagır
-            // 
-            this.yoneticilerCagır.Location = new System.Drawing.Point(0, 3);
-            this.yoneticilerCagır.Name = "yoneticilerCagır";
-            this.yoneticilerCagır.Size = new System.Drawing.Size(1205, 700);
-            this.yoneticilerCagır.TabIndex = 0;
+            this.içerikPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.içerikPanel.Location = new System.Drawing.Point(200, 0);
+            this.içerikPanel.Name = "içerikPanel";
+            this.içerikPanel.Size = new System.Drawing.Size(1212, 703);
+            this.içerikPanel.TabIndex = 2;
             // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1412, 703);
-            this.Controls.Add(panelIcerik);
+            this.Controls.Add(this.içerikPanel);
             this.Controls.Add(this.solPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Otel Sistem";
             this.Load += new System.EventHandler(this.AnaForm_Load);
-            panelIcerik.ResumeLayout(false);
             this.solPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -219,10 +191,8 @@
         private System.Windows.Forms.Button adminGirisGetirBtn;
         private System.Windows.Forms.Panel kayanPanel;
         private System.Windows.Forms.Button odaSecmeGetirBtn;
-        private Yoneticiler yoneticilerCagır;
-        private MusteriBilgileri musteriBilgileriCagır;
         private System.Windows.Forms.Button anaSayfaBtn;
-        private AnaSayfa anaSayfaCagır;
+        private System.Windows.Forms.Panel içerikPanel;
     }
 }
 

@@ -13,15 +13,11 @@ namespace odev2
     public partial class AnaForm : Form
     {
 
-        bool kontrol;
-        int menu_width;
+        
         public AnaForm()
         {
             InitializeComponent();
-            kayanPanel.Height = anaSayfaBtn.Height;
-            kayanPanel.Top = anaSayfaBtn.Top;
-            anaSayfaCagır.BringToFront();
-            //solPanel.Width = 50;
+            
         }
 
         //bool panelAcilmisMi = false;
@@ -56,16 +52,12 @@ namespace odev2
 
         private void musteriBilgileriGetirbtn_Click(object sender, EventArgs e)
         {
-            kayanPanel.Height = musteriBilgileriGetirbtn.Height;
-            kayanPanel.Top = musteriBilgileriGetirbtn.Top;
-            musteriBilgileriCagır.BringToFront();
+            
         }
 
         private void adminGirisGetirBtn_Click(object sender, EventArgs e)
         {
-            kayanPanel.Height = adminGirisGetirBtn.Height;
-            kayanPanel.Top = adminGirisGetirBtn.Top;
-            yoneticilerCagır.BringToFront();
+            
         }
 
         private void anaSayfaBtn_Click(object sender, EventArgs e)
@@ -73,9 +65,25 @@ namespace odev2
             kayanPanel.Height = anaSayfaBtn.Height;
             kayanPanel.Top = anaSayfaBtn.Top;
             anaSayfaCagır.BringToFront();
+            this.Refresh();
         }
 
         private void odaSecmeGetirBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void odaSecenekleriGetirBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rezervasyonIptalGetirBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void girisCıkısBilgileriGetirBtn_Click(object sender, EventArgs e)
         {
             
         }

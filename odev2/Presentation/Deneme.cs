@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace odev2
+namespace odev2.Presentation
 {
-    public partial class AnaSayfa : UserControl
+    public partial class Deneme : UserControl
     {
-        public AnaSayfa()
+        public Deneme()
         {
             InitializeComponent();
         }

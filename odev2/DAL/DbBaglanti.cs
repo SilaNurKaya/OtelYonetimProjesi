@@ -12,15 +12,14 @@ namespace odev2.DAL
     {
         public static MySqlConnection BaglantiGetir()
         {
+            string connectionString = "Server=172.21.54.253;Database=25_132330013;Uid=25_132330013;Pwd=!nif.ogr13KA;";
             try
             {
-                MySqlConnection baglanti = new MySqlConnection("Server=172.21.54.253;Database=25_132330013;Uid=25_132330013;Pwd=!nif.ogr13KA;");
-                baglanti.Open();
-                return baglanti;
+                return new MySqlConnection(connectionString); // Bağlantıyı burada açma, sadece bağlantı nesnesini döndür.
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bağlantı hatası: " + ex.Message);
+                MessageBox.Show("Bağlantı oluşturulamadı: " + ex.Message);
                 throw;
             }
         }

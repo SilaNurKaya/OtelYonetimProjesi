@@ -27,9 +27,7 @@ namespace odev2
         //buraya ıd gözükmesin ve liste kendiliğinden gelsin kodları yazılacak dokümanda var
         private void RezervasyonIptal_Load(object sender, EventArgs e)
         {
-            RezervasyonDAL rezervasyonDal = new RezervasyonDAL();
-            List<Rezervasyon> rezervasyonlar = rezervasyonDal.RezervasyonListele();
-            rezervasyonListesiDgv.DataSource = rezervasyonlar;
+            
         }
     }
 }
