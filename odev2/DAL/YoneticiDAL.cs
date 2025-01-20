@@ -45,17 +45,8 @@ namespace odev2.DAL
                 string query = "DELETE FROM Yonetici WHERE KullaniciAdi = @KullaniciAdi";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@KullaniciAdi", kullaniciAdi);
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Yönetici silinirken bir hata oluştu:" + ex.Message);
-                }
-                
+                connection.Open();
+                command.ExecuteNonQuery();
             }                
         }
 
@@ -99,60 +90,6 @@ namespace odev2.DAL
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-        }
-
-        public string SifreGetir(string guvenlikSorusu, string guvenlikCevabi)
-        {
-            using (var connection = DbBaglanti.BaglantiGetir())
-            {
-                string query = "SELECT sifre FROM Yonetici WHERE guvenlik_sorusu = @GuvenlikSorusu AND guvenlik_cevabi = @GuvenlikCevabi";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@GuvenlikSorusu", guvenlikSorusu);
-                command.Parameters.AddWithValue("@GuvenlikCevabi", guvenlikCevabi);
-
-                connection.Open();
-                var result = command.ExecuteScalar();
-
-                return result != null ? result.ToString() : string.Empty;
-            }
-        }
-
-        
-
-        public YoneticiEntityLayer GirisKontrol(string kullaniciAdi, string sifre)
-        {
-            YoneticiEntityLayer yonetici = null;
-
-            using (MySqlConnection connection = DbBaglanti.BaglantiGetir())
-            {
-                string query = "SELECT * FROM Yonetici WHERE kullanici_Adi = @KullaniciAdi AND sifre = @Sifre";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@KullaniciAdi", kullaniciAdi);
-                command.Parameters.AddWithValue("@Sifre", sifre);
-
-                try
-                {
-                    connection.Open();
-                    MySqlDataReader reader = command.ExecuteReader();
-
-                    // Veritabanından kullanıcı bilgileri varsa, Yonetici objesini oluşturuyoruz
-                    if (reader.Read())
-                    {
-                        yonetici = new YoneticiEntityLayer
-                        {
-                            KullaniciAdi = reader["kullanici_Adi"].ToString(),
-                            Sifre = reader["sifre"].ToString(),
-                            GuvenlikSorusu = reader["guvenlik_Sorusu"].ToString(),
-                            GuvenlikCevabi = reader["guvenlik_Cevabi"].ToString()
-                        };
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Veritabanı hatası: " + ex.Message);
-                }
-            }
-            return yonetici; // Yonetici objesini döndürüyoruz
         }
     }
 }
