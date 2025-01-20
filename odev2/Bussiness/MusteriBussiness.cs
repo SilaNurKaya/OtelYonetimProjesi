@@ -57,6 +57,8 @@ namespace odev2.Bussines
         public List<Musteri> MusteriListele()
         {
             return dal.MusteriListele();
+
+            
         }
     }
         
